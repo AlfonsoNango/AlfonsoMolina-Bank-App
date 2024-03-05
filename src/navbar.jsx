@@ -1,12 +1,12 @@
-import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
-function NavBar() {
+export default function NavBar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
+        <Link to="/" className="navbar-brand">
           BadBank
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,40 +21,39 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href={`/CreateAccount/`}>
+              <Link className="nav-link" to={`/createaccount/`}>
                 Create Account
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={`/login/`}>
+              <Link className="nav-link" to={`/login/`}>
                 Login
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={`/deposit/`}>
+              <Link className="nav-link" to={`/deposit/`}>
                 Deposit
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/withdraw/">
+              <Link className="nav-link" to={`/withdraw/`}>
                 Withdraw
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/balance/">
+              <Link className="nav-link" to={`/balance/`}>
                 Balance
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/alldata/">
+              <Link className="nav-link" to={`/alldata/`}>
                 AllData
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 }
-
-export default NavBar;
