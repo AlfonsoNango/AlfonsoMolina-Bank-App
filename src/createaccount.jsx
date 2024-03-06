@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Card from "./card.jsx";
+import { UserContext } from "./main.jsx";
 
 export default function CreateAccount() {
   const [show, setShow] = useState(true);
@@ -7,7 +8,7 @@ export default function CreateAccount() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const ctx = React.useContext(UserContext);
+  const ctx = useContext(UserContext);
 
   function validate(field, label) {
     if (!field) {
@@ -23,7 +24,7 @@ export default function CreateAccount() {
     if (!validate(name, "name")) return;
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
-    // ctx.users.push({name,email,password,balance:100});
+    ctx.users.push({ name, email, password, balance: 100 });
     setShow(false);
   }
 

@@ -1,3 +1,13 @@
+import { useContext } from "react";
+import { UserContext } from "./main.jsx";
+
 export default function AllData() {
-  return <h2>All Data in Store</h2>;
+  const ctx = useContext(UserContext);
+  return (
+    <>
+      <h5>All Data in Store</h5>
+      {JSON.stringify(ctx)}
+      <br />
+    </>
+  );
 }
