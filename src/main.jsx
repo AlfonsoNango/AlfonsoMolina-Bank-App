@@ -3,10 +3,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import NavBar from "./navbar.jsx";
 import CreateAccount from "./createaccount.jsx";
-import Login from "./login.jsx";
 import Deposit from "./deposit.jsx";
 import Withdraw from "./withdraw..jsx";
-import Balance from "./balance.jsx";
 import AllData from "./alldata.jsx";
 import Home from "./home.jsx";
 import "bootstrap/dist/css/bootstrap.css";
@@ -41,10 +39,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/createaccount/", element: <CreateAccount /> },
-      { path: "/login/", element: <Login /> },
       { path: "/deposit/", element: <Deposit /> },
       { path: "/withdraw/", element: <Withdraw /> },
-      { path: "/balance/", element: <Balance /> },
       { path: "/alldata/", element: <AllData /> },
     ],
   },
