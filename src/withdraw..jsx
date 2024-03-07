@@ -8,9 +8,17 @@ export default function Withdraw() {
   const [withdraw, setWithdraw] = useState(0);
   const [balance, setBalance] = useState(ctx.users[0].balance);
 
-  function validate(field, label) {
-    if (field > balance || !field || field <= 0) {
-      setStatus("error " + label);
+  function validate(field) {
+    if (field > balance) {
+      setStatus("Transaction Failed ");
+      setTimeout(() => setStatus(""), 3000);
+      return false;
+    } else if (field <= 0) {
+      setStatus("Enter a positive numbers");
+      setTimeout(() => setStatus(""), 3000);
+      return false;
+    } else if (!field) {
+      setStatus("Enter a number");
       setTimeout(() => setStatus(""), 3000);
       return false;
     }
@@ -20,7 +28,7 @@ export default function Withdraw() {
   }
 
   function handleWithdraw() {
-    if (!validate(Number(withdraw), "withdraw")) return;
+    if (!validate(Number(withdraw))) return;
     ctx.users[0].balance = balance - Number(withdraw);
     setBalance(ctx.users[0].balance);
     setWithdraw(0);
