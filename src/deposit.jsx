@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import Card from "./card";
-import { UserContext } from "./main";
+import Card from "./card.jsx";
+import { UserContext } from "./main.jsx";
 
 export default function Deposit() {
   const ctx = useContext(UserContext);

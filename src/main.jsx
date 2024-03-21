@@ -2,11 +2,13 @@ import React, { createContext } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import NavBar from "./navbar.jsx";
+import Home from "./home.jsx";
+import Login from "./login.jsx";
 import CreateAccount from "./createaccount.jsx";
 import Deposit from "./deposit.jsx";
-import Withdraw from "./withdraw..jsx";
+import Withdraw from "./withdraw.jsx";
 import AllData from "./alldata.jsx";
-import Home from "./home.jsx";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 export const UserContext = createContext();
@@ -22,6 +24,7 @@ function Spa() {
               email: "abel@mit.edu",
               password: "secret",
               balance: 100,
+              isLogged: "false",
             },
           ],
         }}
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
     element: <Spa />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/login/", element: <Login /> },
       { path: "/createaccount/", element: <CreateAccount /> },
       { path: "/deposit/", element: <Deposit /> },
       { path: "/withdraw/", element: <Withdraw /> },

@@ -21,6 +21,11 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
+              <NavLink className="nav-link" to={`/login/`}>
+                Login
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to={`/createaccount/`}>
                 Create Account
               </NavLink>
