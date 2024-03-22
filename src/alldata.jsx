@@ -12,7 +12,6 @@ export default function AllData() {
             <th scope="col">Mail</th>
             <th scope="col">Password</th>
             <th scope="col">Balance</th>
-            <th scope="col">isLogged</th>
           </tr>
         </thead>
 
@@ -23,7 +22,6 @@ export default function AllData() {
               <td>{item.email}</td>
               <td>{item.password}</td>
               <td>{item.balance}</td>
-              <td>{item.isLogged}</td>
             </tr>
           ))}
         </tbody>
