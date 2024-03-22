@@ -9,7 +9,7 @@ export default function Home() {
       text="You can move around using the navigation bar."
       body={
         <img
-          src="public/bank.png"
+          src="./public/bank.png"
           className="img-fluid"
           alt="Responsive image"
         />
