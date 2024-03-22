@@ -10,6 +10,7 @@ import Withdraw from "./withdraw.jsx";
 import AllData from "./alldata.jsx";
 
 import "bootstrap/dist/css/bootstrap.css";
+import LoginStatus from "./login_status.jsx";
 
 export const UserContext = createContext();
 function Spa() {
@@ -20,9 +21,30 @@ function Spa() {
         value={{
           users: [
             {
-              name: "abel",
+              name: "Abel",
               email: "abel@mit.edu",
-              password: "secret",
+              password: "abel",
+              balance: 100,
+              isLogged: "false",
+            },
+            {
+              name: "Alfonso",
+              email: "alfonso@mit.edu",
+              password: "alfonso",
+              balance: 100,
+              isLogged: "false",
+            },
+            {
+              name: "Carlos",
+              email: "carlos@mit.edu",
+              password: "carlos",
+              balance: 100,
+              isLogged: "false",
+            },
+            {
+              name: "Lina",
+              email: "lina@mit.edu",
+              password: "lina",
               balance: 100,
               isLogged: "false",
             },
@@ -30,6 +52,7 @@ function Spa() {
         }}
       >
         <Outlet />
+        <LoginStatus />
       </UserContext.Provider>
     </div>
   );

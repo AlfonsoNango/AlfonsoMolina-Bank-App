@@ -7,12 +7,15 @@ export default function Login() {
   const [status, setStatus] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLogged, setIsLogged] = useState(false);
+
+  const initialStatus = () => {
+    if (ctx.users[0].isLogged === "true") return true;
+  };
+
+  const [isLogged, setIsLogged] = useState(initialStatus);
 
   const userEmail = ctx.users[0].email;
-  console.log(userEmail);
   const userPassword = ctx.users[0].password;
-  console.log(userPassword);
   const userName = ctx.users[0].name;
 
   function validate(field) {
@@ -22,9 +25,6 @@ export default function Login() {
       return false;
     }
     if (email === userEmail && password === userPassword) {
-      ctx.users[0].isLogged = "true";
-      setIsLogged(true);
-      setStatus("logged");
       setTimeout(() => setStatus(""), 3000);
       return true;
     } else {
@@ -38,6 +38,13 @@ export default function Login() {
     console.log(email, password);
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
+    ctx.users[0].isLogged = "true";
+    setIsLogged(true);
+  }
+
+  function handleLogout() {
+    ctx.users[0].isLogged = "false";
+    setIsLogged(false);
   }
 
   return (
@@ -50,8 +57,12 @@ export default function Login() {
           <>
             <h5>Welcome {userName}, now you are logged</h5>
 
-            <button type="submit" className="btn btn-light">
-              clik here to unlog
+            <button
+              onClick={handleLogout}
+              type="submit"
+              className="btn btn-light"
+            >
+              click here to log out
             </button>
           </>
         ) : (
