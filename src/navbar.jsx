@@ -3,16 +3,16 @@ import { NavLink } from "react-router-dom";
 export default function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand navbar-light bg-light">
         <NavLink to="/" className="navbar-brand">
           BadBank
         </NavLink>
         <button
-          className="navbar-toggler"
+          class="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggle"
+          aria-controls="navbarToggle"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
